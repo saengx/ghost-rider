@@ -1,0 +1,17 @@
+#!/bin/bash 
+  
+cd
+rm -rf ghost-rider
+git clone https://github.com/saengx/ghost-rider
+cd ../etc/gr-miner/set-miner
+cp -r online.json offline.json /../root/ghost-rider/gr-miner/set-miner
+cd
+cd ../etc
+rm -rf gr-miner 
+cd
+cd ../bin
+rm -rf edit-miner run-miner backup restore 
+cd
+cd ghost-rider
+chmod +x setupdate.sh
+sh setupdate.sh
