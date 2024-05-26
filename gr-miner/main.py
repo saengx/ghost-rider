@@ -19,7 +19,7 @@ except ImportError:
     import requests
     
 def runOffline():
-    banner()
+    #banner()
     try:
         with open("set-miner/online.json", encoding="utf-8") as set:
             load = set.read()
