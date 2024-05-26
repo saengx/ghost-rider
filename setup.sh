@@ -15,7 +15,7 @@ apt-get install nano -y
 
 chmod +x edit-gr
 chmod +x run-gr
-chmod +x update
+chmod +x update-gr
 chmod +x ANSI_Shadow.flf
 chmod +x backup
 chmod +x restore
@@ -32,7 +32,7 @@ apt-get install python3-requests -y
 mv gr-miner ../../etc
 mv edit-gr ../../bin
 mv run-gr ../../bin
-mv update ../../bin
+mv update-gr ../../bin
 mv ANSI_Shadow.flf ../../usr/share/figlet
 mv backup /data/data/com.termux/files/usr/bin
 mv restore /data/data/com.termux/files/usr/bin
