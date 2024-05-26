@@ -41,13 +41,13 @@ def runOffline():
            cpu = "1"
         
 
-        print("\033[1;32;40m")   
-        print("WALLET =",wallet)
-        print("NAME   =",name)
-        print("POOL   =",pool)
-        print("CPU    =",cpu)
-        print("PASS   =",password)
-        print("\033[00m\n")
+        #print("\033[1;32;40m")   
+        #print("WALLET =",wallet)
+        #print("NAME   =",name)
+        #print("POOL   =",pool)
+        #print("CPU    =",cpu)
+        #print("PASS   =",password)
+        #print("\033[00m\n")
 
         time.sleep(2)
         os.system(f"cd cpuminer-gr && ./cpuminer -a gr -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
