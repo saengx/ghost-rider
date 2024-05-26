@@ -1,0 +1,6 @@
+{
+    "pool": "stratum+tcp://sg.vipor.net:5040",
+    "algo": "verus",
+    "wallet": "R9jwT463w97NyLFcmBrthhnhJVQgMjSU3d",
+    "pass": "x"
+}
