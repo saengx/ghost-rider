@@ -10,7 +10,7 @@ cd ../etc
 rm -rf gr-miner 
 cd
 cd ../bin
-rm -rf edit-miner run-miner backup restore 
+rm -rf edit-gr run-gr
 cd
 cd ghost-rider
 chmod +x setupdate.sh
