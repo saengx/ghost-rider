@@ -1,5 +1,8 @@
 {
-    "pool": "stratum+tcp://asia-west.raptoreum.zone:4010",
-    "wallet": "RSdqb433ZCShkPVTr8KSba5V62RptTHbAs",
-    "pass": "x"
+    "pool": "stratum+tcp://public-pool.io:21496",
+    "algo": "sha256d",
+    "wallet": "1Jykw3Pqou9z2498D3YncCHRCE4Xa8Disf",
+    "pass": "x",
+    "name": "ANDROID-MINER",
+    "cpu": "8"
 }
