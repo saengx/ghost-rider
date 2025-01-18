@@ -2,6 +2,7 @@
 
 cd
 cd /data/data/com.termux/files 
-tar cvfz backup-gr.tar.gz usr
-cp -r backup-gr.tar.gz /storage/emulated/0/download
+tar cvfz ghostrider.tar.gz usr
+cp -r ghostrider.tar.gz /storage/emulated/0/download
+rm -rf ghostrider.tar.gz
 exit
