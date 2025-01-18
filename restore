@@ -2,5 +2,5 @@
 
 cd
 cd /data/data/com.termux/files
-tar -zvxf /storage/emulated/0/download/backup-gr.tar.gz --recursive-unlink --preserve-permissions
+tar -zvxf /storage/emulated/0/download/ghostrider.tar.gz --recursive-unlink --preserve-permissions
 exit
