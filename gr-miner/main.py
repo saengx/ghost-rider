@@ -56,7 +56,7 @@ def runOffline():
         print("\033[00m\n")
 
         # time.sleep(2)
-        os.system(f"cd miner && ./cpuminer -a {algo} -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
+        os.system(f"cd cpuminer-gr && ./cpu-miner -a {algo} -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
     except:
         push = {'pool': '','algo': '','wallet': '','pass': '','name': '','cpu': ''}
         with open("set-miner/online.json", "w") as set:
