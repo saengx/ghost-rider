@@ -2787,13 +2787,8 @@ out:
 
 static void show_credits() 
 {
-  system("clear");
   printf("\n**********  " PACKAGE_NAME " " PACKAGE_VERSION
-         "  *********** \n");
-  printf("\033[1;33;40m");
-  system(" figlet -f ANSI_Shadow Ghost");
-  system(" figlet -f ANSI_Shadow rider");
-  printf("\033[00m\n");  
+         "  *********** \n"); 
 }
 
 #define check_cpu_capability() cpu_capability(false)
