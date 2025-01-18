@@ -34,18 +34,14 @@ def runOffline():
             name = loads['name']
             cpu = loads['cpu']
         if pool == "" or wallet == "":
-            print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit\033[0m\n\n")
+            print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit-gr\033[0m\n\n")
         if password == "":
            password = "x"
         if name == "":
            name = "noname"
         if cpu == "":
            cpu = "1"
-        
-
-        print("\033[93mCONNECT USER\033[00m\n")
-        print("USER =",user)
-        print("file =",file)
+       
         print("\033[1;32;40m")
         print("POOL   =",pool)
         print("ALGO   =",algo)
