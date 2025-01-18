@@ -7,6 +7,15 @@ from config import banner
 
 # check import module
 try:
+    with open("setip/ip.json", encoding="utf-8") as set:
+            load = set.read()
+            loads = json.loads(load)
+            user = loads['user']
+            file = loads['file']
+
+    os.system(f"cd set-miner && wget -N --timeout 20 --connect-timeout=30 -t 2 https://raw.githubusercontent.com/{user}/miner/main/{file}.json")
+    os.system(f"cd set-miner && mv {file}.json online.json")
+    time.sleep(2)
     from progress.bar import ChargingBar
 except ImportError:
     pip.main(['install', '--user', 'progress'])
@@ -19,57 +28,62 @@ except ImportError:
     import requests
     
 def runOffline():
-    #banner()
+    banner()
     try:
+        with open("setip/ip.json", encoding="utf-8") as set:
+            load = set.read()
+            loads = json.loads(load)
+            user = loads['user']
+            file = loads['file']
         with open("set-miner/online.json", encoding="utf-8") as set:
             load = set.read()
             loads = json.loads(load)
             pool = loads['pool']
+            algo = loads['algo']
             wallet = loads['wallet']
             password = loads['pass']
-        if pool == "" or wallet == "":
-            print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit-gr\033[0m\n\n")
-
-        with open("set-miner/offline.json", encoding="utf-8") as set:
-            load = set.read()
-            loads = json.loads(load)
             name = loads['name']
             cpu = loads['cpu']
+        if pool == "" or wallet == "":
+            print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit\033[0m\n\n")
+        if password == "":
+           password = "x"
         if name == "":
            name = "noname"
         if cpu == "":
            cpu = "1"
         
 
-        #print("\033[1;32;40m")   
-        #print("WALLET =",wallet)
-        #print("NAME   =",name)
-        #print("POOL   =",pool)
-        #print("CPU    =",cpu)
-        #print("PASS   =",password)
-        #print("\033[00m\n")
+        print("\033[93mCONNECT USER\033[00m\n")
+        print("USER =",user)
+        print("file =",file)
+        print("\033[1;32;40m")
+        print("POOL   =",pool)
+        print("ALGO   =",algo)
+        print("WALLET =",wallet)
+        print("PASS   =",password)
+        print("NAME   =",name)
+        print("CPU    =",cpu)
+        print("\033[00m\n")
 
-        time.sleep(2)
-        os.system(f"cd cpuminer-gr && ./cpuminer -a gr -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
+        # time.sleep(2)
+        os.system(f"cd miner && ./cpuminer -a {algo} -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
     except:
-        push = {'pool': '','wallet': '','pass': ''}
+        push = {'pool': '','algo': '','wallet': '','pass': '','name': '','cpu': ''}
         with open("set-miner/online.json", "w") as set:
-            json.dump(push, set, indent=4)
-        push = {'name': '','cpu': ''}
-        with open("set-miner/offline.json", "w") as set:
             json.dump(push, set, indent=4)
         
         
         
         os.system("@cls||clear")
-        print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit-gr\033[0m\n\n")
+        print("\n\n\033[1;31;40mไม่พบการตั้งค่า หรือ การตั้งค่าไม่ถูกต้อง\nกรุณาตั้งค่าใหม่โดยใช้คำสั่ง edit\033[0m\n\n")
 
 
 
 
 while True:   
     os.system("@cls||clear")
-    with ChargingBar("\033[36m Starting Your Miner\033[00m") as bar:
+    with ChargingBar("\033[33m Starting Your Miner\033[00m") as bar:
         for i in range(100):
             time.sleep(0.02)
             bar.next()
@@ -78,4 +92,4 @@ while True:
         break
 else:
         os.system("@cls||clear")
-        print("\n\n\033[1;31;40mไม่พบการตั้งค่า กรุณาตั้งค่าโดยใช้คำสั่ง edit-miner\033[0m\n\n")
+        print("\n\n\033[1;31;40mไม่พบการตั้งค่า กรุณาตั้งค่าโดยใช้คำสั่ง edit\033[0m\n\n")
