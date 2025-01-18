@@ -24,11 +24,6 @@ except ImportError:
 def runOffline():
     banner()
     try:
-        with open("setip/ip.json", encoding="utf-8") as set:
-            load = set.read()
-            loads = json.loads(load)
-            user = loads['user']
-            file = loads['file']
         with open("set-miner/online.json", encoding="utf-8") as set:
             load = set.read()
             loads = json.loads(load)
