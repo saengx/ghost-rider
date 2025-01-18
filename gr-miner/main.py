@@ -51,7 +51,7 @@ def runOffline():
         print("CPU    =",cpu)
         print("\033[00m\n")
 
-        # time.sleep(2)
+        time.sleep(5)
         os.system(f"cd cpuminer-gr && ./cpuminer -a {algo} -o {pool} -u {wallet}.{name} -p {password} -t {cpu}")
     except:
         push = {'pool': '','algo': '','wallet': '','pass': '','name': '','cpu': ''}
