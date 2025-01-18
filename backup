@@ -2,6 +2,6 @@
 
 cd
 cd /data/data/com.termux/files 
-tar cvfz backup.tar.gz usr
-cp -r backup.tar.gz /storage/emulated/0/download
+tar cvfz backup-gr.tar.gz usr
+cp -r backup-gr.tar.gz /storage/emulated/0/download
 exit
