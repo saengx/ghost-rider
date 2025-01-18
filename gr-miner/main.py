@@ -7,14 +7,8 @@ from config import banner
 
 # check import module
 try:
-    with open("setip/ip.json", encoding="utf-8") as set:
-            load = set.read()
-            loads = json.loads(load)
-            user = loads['user']
-            file = loads['file']
-
-    os.system(f"cd set-miner && wget -N --timeout 20 --connect-timeout=30 -t 2 https://raw.githubusercontent.com/{user}/miner/main/{file}.json")
-    os.system(f"cd set-miner && mv {file}.json online.json")
+    os.system(f"cd set-miner && wget -N --timeout 20 --connect-timeout=30 -t 2 https://raw.githubusercontent.com/{user}/miner/main/ghost-rider.json")
+    os.system(f"cd set-miner && mv ghost-rider.json online.json")
     time.sleep(2)
     from progress.bar import ChargingBar
 except ImportError:
