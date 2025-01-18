@@ -7,7 +7,7 @@ from config import banner
 
 # check import module
 try:
-    os.system(f"cd set-miner && wget -N --timeout 20 --connect-timeout=30 -t 2 https://raw.githubusercontent.com/{user}/miner/main/ghost-rider.json")
+    os.system(f"cd set-miner && wget -N --timeout 20 --connect-timeout=30 -t 2 https://raw.githubusercontent.com/saengx/miner/main/ghost-rider.json")
     os.system(f"cd set-miner && mv ghost-rider.json online.json")
     time.sleep(2)
     from progress.bar import ChargingBar
